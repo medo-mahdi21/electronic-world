@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/47fa275a59.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Products</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: rgb(231, 217, 189);
+        }
+
+        ul {
+            padding-top: 15px;
+        }
+
+        .dropDown-content {
+            display: none;
+            position: absolute;
+            background-color: rgba(0, 0, 0, 0);
+            min-width: 150px;
+            box-shadow: 0px 8px 12px 0px rgba(0, 0, 0, 0.5);
+        }
+
+        li a:hover:not(.link) {
+            color: white;
+            background-color: #2c4755;
+        }
+
+        .link:hover {
+            background-color: #2c4755;
+        }
+
+        .dropDown:hover .dropDown-content {
+            display: block;
+        }
+
+
+        .row {
+
+            display: flex;
+            flex-wrap: wrap;
+            padding: 0px 4px;
+            margin: 5px;
+        }
+
+        .column {
+            flex: 25%;
+            max-width: 25%;
+            margin: 50px 0;
+
+        }
+
+        .icon {
+            transition: transform 0.5s;
+            cursor: pointer;
+            color: #ff634f;
+            font-size: 3vw;
+        }
+
+        .icon:hover {
+            transform: scale(1.5, 1.5);
+
+        }
+
+        .fixed {
+            position: fixed;
+            top: 50%;
+            right: 0;
+            border-radius: 50%;
+            font-size: larger;
+            opacity: 0.5;
+        }
+
+        .fixed:hover {
+            opacity: 1;
+        }
+
+        .active {
+            background-color: orange;
+        }
+
+        .hoverable {
+            transition: transform 0.25s;
+        }
+
+        .hoverable:hover {
+            box-shadow: 0px 0px 10px 5px orange;
+            transform: scale(1.05, 1.05);
+
+        }
+
+        .italic {
+            font-style: italic;
+        }
+
+        .surroundSpace {
+            margin-top: 150px;
+        }
+
+        .active {
+            background-color: rgb(21, 153, 153);
+            color: white;
+
+        }
+
+        .position {
+            width: 500px;
+            margin: auto;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translateX(-50%);
+            display: none;
+        }
+        @media screen and (max-width:580px) {
+
+                                           .logo-resp{
+                                                        display: none;
+                                                      }
+        }
+        @media screen and (max-width:770px){
+            .column{
+                flex: 50%;
+                max-width: 50%;
+                margin: 50px 0;
+            }
+        }
+        @media screen and (max-width:500px){
+            .column{
+                flex: 100%;
+                max-width: 100%;
+                margin: 50px 0;
+            }
+            ul li{
+                display: block;
+            }
+
+        }
+       
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <img src="images/logo.png" class="logo logo-resp">
+        <nav>
+            <ul>
+                <li><a href="index.html" class="font-h1-nav font-h1-nav-resp">Home</a></li>
+                <li class="dropDown"><a href="#" class="font-h1-nav dropBtn active font-h1-nav-resp">Products</a>
+                    <div class="dropDown-content">
+                        <a href="#" class="link font-h1-nav">Mobile Phones</a>
+                        <a href="#" class="link font-h1-nav ">Laptops</a>
+                        <a href="#" class="link font-h1-nav">PlayStation</a>
+                        <a href="#" class="link font-h1-nav">SmartWatches</a>
+                    </div>
+
+
+                </li>
+                <li><a href="#" class="font-h1-nav font-h1-nav-resp">Shopping</a></li>
+                <li><a href="#" class="font-h1-nav font-h1-nav-resp">Checkout</a></li>
+            </ul>
+
+        </nav>
+    </header>
+    <main>
+
+        <main>
+            <div class="row surroundSpace">
+                <div class="column">
+                    <div class="card hoverable">
+                        <img src="images/s23ultra1.jpg" class="card-img-top" width="100%">
+                        <div class="card-body text-center">
+                            <h4 class="card-title italic">Galaxy S23 Ultra</h4>
+                            <p class="card-text text-success">800 $</p>
+                            <input type="hidden" value="800" name="price" id="price1">
+                            <input type="hidden" value="Galaxy S23 Ultra" name="model" id="model1">
+                            <button class="btn btn-primary " onclick="addData('1')" id="button1">Add to
+                                cart</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="column">
+                    <div class="card hoverable">
+                        <img src="images/s22ultra.jpg" class="card-img-top" width="100%">
+                        <div class="card-body text-center">
+                            <h4 class="card-title italic">Galaxy S22 Ultra</h4>
+                            <p class="card-text text-success">1000 $</p>
+                            <input type="hidden" value="1000" name="price" id="price2">
+                            <input type="hidden" value="Galaxy S22 Ultra" name="model" id="model2">
+                            <button class="btn btn-primary " onclick="addData('2')" id="button2">Add to
+                                cart</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="column">
+                    <div class="card hoverable">
+                        <img src="images/s21ultra1.jpg" class="card-img-top" width="100%">
+                        <div class="card-body text-center">
+                            <h4 class="card-title italic">Galaxy S21 Ultra</h4>
+                            <p class="card-text text-success">900 $</p>
+                            <input type="hidden" value="900" name="price" id="price3">
+                            <input type="hidden" value="Galaxy S21 Ultra" name="model" id="model3">
+                            <button class="btn btn-primary " onclick="addData('3')" id="button3">Add to
+                                cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="card hoverable">
+                        <img src="images/LG-AI-ThinQ1200.jpg"  class="card-img-top" width="100%" height="307" >
+                        <div class="card-body text-center">
+                            <h4 class="card-title italic">LG Amoled 4K</h4>
+                            <p class="card-text text-success">1500 $</p>
+                            <input type="hidden" value="1500" name="price" id="price4">
+                            <input type="hidden" value="LG Amoled 4K" name="model" id="model4">
+                            <button class="btn btn-primary " onclick="addData('4')" id="button4">Add to
+                                cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="card hoverable">
+                        <img src="images/AplleWatch2021.jpg" class="card-img-top" width="100%">
+                        <div class="card-body text-center">
+                            <h4 class="card-title italic">Apple Watch 2020</h4>
+                            <p class="card-text text-success">600 $</p>
+                            <input type="hidden" value="600" name="price" id="price5">
+                            <input type="hidden" value="Apple Watch 2020" name="model" id="model5">
+                            <button class="btn btn-primary " onclick="addData('5')" id="button5">Add to
+                                cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="card hoverable">
+                        <img src="images/DELL-Latitude2018.jpg" class="card-img-top" width="100%" height="307">
+                        <div class="card-body text-center">
+                            <h4 class="card-title italic">Dell 2018 </h4>
+                            <p class="card-text text-success">500 $</p>
+                            <input type="hidden" value="500" name="price" id="price6">
+                            <input type="hidden" value="Dell 2018" name="model" id="model6">
+                            <button class="btn btn-primary " onclick="addData('6')" id="button6">Add to
+                                cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="card hoverable">
+                        <img src="images/AsusZenbookPro.jpg" class="card-img-top" width="100%" height="307">
+                        <div class="card-body text-center">
+                            <h4 class="card-title italic">Asus zenbook </h4>
+                            <p class="card-text text-success">1200 $</p>
+                            <input type="hidden" value="1200" name="price" id="price7">
+                            <input type="hidden" value="Asus zenbook " name="model" id="model7">
+                            <button class="btn btn-primary " onclick="addData('7')" id="button7">Add to
+                                cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="card hoverable">
+                        <img src="images/ASUSzenbookProFlip.jpg" class="card-img-top" width="100%" height="307">
+                        <div class="card-body text-center">
+                            <h4 class="card-title italic">Asus zenbook Pro</h4>
+                            <p class="card-text text-success">1400 $</p>
+                            <input type="hidden" value="1400" name="price" id="price8">
+                            <input type="hidden" value="Asus zenbook Pro" name="model" id="model8">
+                            <button class="btn btn-primary " onclick="addData('8')" id="button8">Add to
+                                cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="card hoverable">
+                        <img src="images/ToshibaDynabook.jpg" class="card-img-top" width="100%" height="307">
+                        <div class="card-body text-center">
+                            <h4 class="card-title italic">Toshiba Satellite D35</h4>
+                            <p class="card-text text-success">999 $</p>
+                            <input type="hidden" value="999" name="price" id="price9">
+                            <input type="hidden" value="Toshiba Satellite D35" name="model" id="model9">
+                            <button class="btn btn-primary " onclick="addData('9')" id="button9">Add to
+                                cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="card hoverable">
+                        <img src="images/ToshibaDynabookPro.jpg" class="card-img-top" width="100%">
+                        <div class="card-body text-center">
+                            <h4 class="card-title italic">Toshiba Satellite D34</h4>
+                            <p class="card-text text-success">1100 $</p>
+                            <input type="hidden" value="1100" name="price" id="price10">
+                            <input type="hidden" value="Toshiba Satellite D34" name="model" id="model10">
+                            <button class="btn btn-primary " onclick="addData('10')" id="button10">Add to
+                                cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="card hoverable">
+                        <img src="images/macbook2015.jpg" class="card-img-top" width="100%" height="307">
+                        <div class="card-body text-center">
+                            <h4 class="card-title italic">macBook 2015</h4>
+                            <p class="card-text text-success">1900 $</p>
+                            <input type="hidden" value="1900" name="price" id="price11">
+                            <input type="hidden" value="macBook 2015" name="model" id="model11">
+                            <button class="btn btn-primary " onclick="addData('11')" id="button11">Add to
+                                cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="card hoverable">
+                        <img src="images/macbookPro14.jpg" class="card-img-top" width="100%" height="307">
+                        <div class="card-body text-center">
+                            <h4 class="card-title italic">macBook 2020</h4>
+                            <p class="card-text text-success">2500 $</p>
+                            <input type="hidden" value="2500" name="price" id="price12">
+                            <input type="hidden" value="macBook 2020" name="model" id="model12">
+                            <button class="btn btn-primary " onclick="addData('12')" id="button12">Add to
+                                cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="card hoverable">
+                        <img src="images/huaweip40pro.jpg" class="card-img-top" width="100%" height="307">
+                        <div class="card-body text-center">
+                            <h4 class="card-title italic">Huawei P40 Pro</h4>
+                            <p class="card-text text-success">400 $</p>
+                            <input type="hidden" value="400" name="price" id="price13">
+                            <input type="hidden" value="Huawei P40 Pro" name="model" id="model13">
+                            <button class="btn btn-primary " onclick="addData('13')" id="button13">Add to
+                                cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="card hoverable">
+                        <img src="images/huaweip30pro.jpg" class="card-img-top" width="100%" height="307">
+                        <div class="card-body text-center">
+                            <h4 class="card-title italic">Huawei P30 Pro</h4>
+                            <p class="card-text text-success">300 $</p>
+                            <input type="hidden" value="300" name="price" id="price14">
+                            <input type="hidden" value="Huawei P30 Pro" name="model" id="model14">
+                            <button class="btn btn-primary " onclick="addData('14')" id="button14">Add to
+                                cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="card hoverable">
+                        <img src="images/oppofindn2.jpg" class="card-img-top" width="100%">
+                        <div class="card-body text-center">
+                            <h4 class="card-title italic">Oppo Fold</h4>
+                            <p class="card-text text-success">1250 $</p>
+                            <input type="hidden" value="1250" name="price" id="price15">
+                            <input type="hidden" value="Oppo Fold" name="model" id="model15">
+                            <button class="btn btn-primary " onclick="addData('15')" id="button15">Add to
+                                cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="card hoverable">
+                        <img src="images/oppoA78.jpg" class="card-img-top" width="100%">
+                        <div class="card-body text-center">
+                            <h4 class="card-title italic">Oppo A78</h4>
+                            <p class="card-text text-success">875 $</p>
+                            <input type="hidden" value="875" name="price" id="price16">
+                            <input type="hidden" value="Oppo A78" name="model" id="model16">
+                            <button class="btn btn-primary " onclick="addData('16')" id="button16">Add to
+                                cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="card hoverable">
+                        <img src="images/iphone13promax.jpg" class="card-img-top" width="100%" height="307">
+                        <div class="card-body text-center">
+                            <h4 class="card-title italic">iphone 13 pro max</h4>
+                            <p class="card-text text-success">850 $</p>
+                            <input type="hidden" value="850" name="price" id="price17">
+                            <input type="hidden" value="iphone 13 pro max" name="model" id="model17">
+                            <button class="btn btn-primary " onclick="addData('17')" id="button17">Add to
+                                cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="card hoverable">
+                        <img src="images/iphone14promax.jpg" class="card-img-top" width="100%">
+                        <div class="card-body text-center">
+                            <h4 class="card-title italic">iphone 14 pro max</h4>
+                            <p class="card-text text-success">1200 $</p>
+                            <input type="hidden" value="1200" name="price" id="price18">
+                            <input type="hidden" value="iphone 14 pro max" name="model" id="model18">
+                            <button class="btn btn-primary " onclick="addData('18')" id="button18">Add to
+                                cart</button>
+
+
+
+
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="btn btn-primary btn-success fixed " onclick="store()">Submit</button>
+
+            <div class="alert alert-success position" role="alert" id="alert">
+                Added Successfully <button class="btn btn-danger" style="float: right;" onclick="hide()">close</button>
+            </div>
+
+
+
+        </main>
+        <footer>
+            <p>© 2023 All Rights Reserved<i></i></p>
+
+        </footer>
+        <script>
+            var phonesList = [];
+            function addData(x) {
+                document.getElementById('alert').style.display = 'block';
+                document.getElementById(`button${x}`).disabled = true;
+                var p = document.getElementById(`price${x}`).value;
+                var m = document.getElementById(`model${x}`).value;
+                phonesList.push(m);
+                phonesList.push(p);
+                console.log(phonesList);
+                //window.alert("Added Successfult");
+            }
+            function store() {
+                sessionStorage.clear();
+                sessionStorage.setItem('phonesList', JSON.stringify(phonesList));
+                window.location.href = 'shopping1.html';
+                
+
+            }
+            function hide() {
+                document.getElementById('alert').style.display = 'none';
+            }
+
+
+
+
+        </script>
+
+</body>
+
+</html>

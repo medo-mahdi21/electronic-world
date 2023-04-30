@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/47fa275a59.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="result.js" defer></script>
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Shopping</title>
+    <style>
+                *{
+            box-sizing: border-box;
+        }
+        body{
+            background-color: rgb(231, 217, 189);
+        }
+        ul{
+            padding-top: 15px;
+        }
+        .table {
+               margin: auto;
+               width: 50% !important;
+             }
+
+             .active{
+            background-color: rgb(21, 153, 153);
+            color: white;
+    
+        }
+        .position{
+            width: 500px;
+            margin: auto;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translateX(-50%);
+            display: none;
+        }
+        .position1{
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            display: none;
+            
+
+        }
+        @media screen and (max-width:580px){
+                                             .logo-resp{
+                                                        display: none;
+                                                      }
+        }
+        @media screen and (max-width:500px){
+            ul li{
+                display: block;
+            }
+        }
+
+             
+
+
+    </style>
+</head>
+<body>
+    <header>
+        <img src="images/logo.png" class="logo logo-resp">
+        <nav>
+            <ul>
+                <li><a href="#" class="font-h1-nav">Home</a></li>
+                <li><a href="#" class="font-h1-nav">Products</a></li>
+                <li><a href="#" class="font-h1-nav active">Shopping</a></li>
+                <li><a href="#" class="font-h1-nav">Checkout</a></li>
+            </ul>
+
+        </nav>
+
+    </header>
+    <main id="body" style="height: 700px;">
+        <div class="alert alert-danger position" role="alert" id="alert1">
+            Sorry there are no products to buy  <button class="btn btn-danger" style="float: right;" onclick="hidee()">close</button>
+        </div>
+        <div class="spinner-border text-primary position1" id="spinner"></div>
+    
+
+    </main>
+    <footer>
+        <p>© 2023  All Rights Reserved<i></i></p>
+
+    </footer>
+
+
+
+    
+</body>
+</html>
